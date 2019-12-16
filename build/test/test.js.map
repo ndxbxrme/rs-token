@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "test.js",
+  "sourceRoot": "../../src/test/",
+  "sources": [
+    "test.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,MAAA,SAAA,EAAA,OAAA,EAAA,SAAA,EAAA,OAAA,EAAA,SAAA,EAAA,aAAA,EAAA,IAAA,EAAA,YAAA,EAAA,UAAA,EAAA,QAAA,EAAA,QAAA,EAAA,KAAA,EAAA;;EAAA,CAAA,CAAC,OAAD,EAAU,OAAV,EAAmB,YAAnB,EAAiC,SAAjC,EAA4C,aAA5C,EAA2D,UAA3D,CAAA,GAAyE,OAAA,CAAQ,UAAR,CAAA,CAAoB;IAAA,aAAA,EAAe;EAAf,CAApB,CAAA,CAA4C;IAAC,MAAA,EAAO,CAAA;EAAR,CAA5C,CAAzE;;EAEA,MAAA,GAAS,IAAI,IAAJ,CAAA,CAAU,CAAC,OAAX,CAAA,CAAoB,CAAC,QAArB,CAA8B,EAA9B;;EACT,OAAO,CAAC,GAAR,CAAY,QAAZ,EAAsB,MAAtB;;EACA,SAAA,GAAY,OAAA,CAAQ,MAAR;;EACZ,OAAO,CAAC,GAAR,CAAY,WAAZ,EAAyB,SAAzB;;EACA,SAAA,GAAY,OAAA,CAAQ,SAAR;;EACZ,OAAO,CAAC,GAAR,CAAY,WAAZ,EAAyB,SAAzB;;EACA,QAAA,GAAW;;EACX,OAAO,CAAC,GAAR,CAAY,UAAZ,EAAwB,QAAxB;;EACA,IAAA,GAAO,YAAA,CAAa,QAAb;;EACP,OAAO,CAAC,GAAR,CAAY,MAAZ,EAAoB,IAApB;;EACA,OAAO,CAAC,GAAR,CAAY,qBAAZ,EAAmC,SAAA,CAAU,QAAV,EAAoB,IAApB,CAAnC;;EACA,KAAA,GAAQ,aAAA,CAAc,MAAd,EAAsB,CAAtB;;EACR,OAAO,CAAC,GAAR,CAAY,OAAZ,EAAqB,KAArB;;EACA,QAAA,GAAW,UAAA,CAAW,KAAX;;EACX,OAAO,CAAC,GAAR,CAAY,eAAZ,EAA6B,QAA7B;AAhBA",
+  "sourcesContent": [
+    "{encrypt, decrypt, hashPassword, checkHash, generateToken, parseToken} = require('../index')(encryptionKey: '135x!')({config:{}})\r\n\r\nuserId = new Date().valueOf().toString(23)\r\nconsole.log 'userId', userId\r\nencrypted = encrypt userId\r\nconsole.log 'encrypted', encrypted\r\ndecrypted = decrypt encrypted\r\nconsole.log 'decrypted', decrypted\r\npassword = \"monkey123\"\r\nconsole.log 'password', password\r\nhash = hashPassword password\r\nconsole.log 'hash', hash\r\nconsole.log 'pass matches hash =', checkHash password, hash\r\ntoken = generateToken userId, 4\r\nconsole.log 'token', token\r\nparsedId = parseToken token\r\nconsole.log 'parsed userId', parsedId"
+  ]
+}
